@@ -1,0 +1,227 @@
+{
+  "Breadcrumbs": {
+    "prefix": "breadcrumbs",
+    "body": [
+      "<nav>",
+      "  <p>",
+      "    <router-link to=\"${1:/}\">Home</router-link>",
+      "    <router-link to=\"${2:/products}\">Products</router-link>",
+      "    <router-link to=\"${3:/details}\">${4:Product Details}</router-link>",
+      "  </p>",
+      "</nav>"
+    ],
+    "description": "Semantic Vue breadcrumbs navigation with router-link"
+  },
+  "Card": {
+    "prefix": "card",
+    "body": [
+      "<article>",
+      "  <header>",
+      "    <h2>${1:Card Title}</h2>",
+      "  </header>",
+      "  <p>${2:Card content goes here providing key information to the user.}</p>",
+      "  <footer>",
+      "    <router-link to=\"${3:#}\">${4:Action Link}</router-link>",
+      "  </footer>",
+      "</article>"
+    ],
+    "description": "Semantic Vue card component"
+  },
+  "Card List": {
+    "prefix": "cardlist",
+    "body": [
+      "<ol>",
+      "  <li v-for=\"(item, index) in ${1:items}\" :key=\"item.id\">",
+      "    <article>",
+      "      <header>",
+      "        <h2>{{ item.title }}</h2>",
+      "      </header>",
+      "      <p>{{ item.content }}</p>",
+      "      <footer>",
+      "        <router-link :to=\"item.link\">{{ item.linkText }}</router-link>",
+      "      </footer>",
+      "    </article>",
+      "  </li>",
+      "</ol>"
+    ],
+    "description": "Semantic Vue list of cards with v-for"
+  },
+  "Checkbox List": {
+    "prefix": "checkboxlist",
+    "body": [
+      "<fieldset>",
+      "  <legend>${1:Options}</legend>",
+      "  <p>",
+      "    <input type=\"checkbox\" id=\"${2:option1}\" v-model=\"${3:selectedOptions}\" value=\"${2:option1}\" />",
+      "    <label for=\"${2:option1}\">${4:First Option}</label>",
+      "  </p>",
+      "  <p>",
+      "    <input type=\"checkbox\" id=\"${5:option2}\" v-model=\"${3:selectedOptions}\" value=\"${5:option2}\" />",
+      "    <label for=\"${5:option2}\">${6:Second Option}</label>",
+      "  </p>",
+      "  <p>",
+      "    <input type=\"checkbox\" id=\"${7:option3}\" v-model=\"${3:selectedOptions}\" value=\"${7:option3}\" />",
+      "    <label for=\"${7:option3}\">${8:Third Option}</label>",
+      "  </p>",
+      "</fieldset>"
+    ],
+    "description": "Semantic Vue checkbox list with fieldset and v-model"
+  },
+  "Data With Labels": {
+    "prefix": "datalist",
+    "body": [
+      "<h2>${1:Item Details}</h2>",
+      "<dl>",
+      "  <dt>${2:Property 1}</dt>",
+      "  <dd>{{ ${3:item}.${4:property1} }}</dd>",
+      "</dl>",
+      "<dl>",
+      "  <dt>${5:Property 2}</dt>",
+      "  <dd>{{ ${3:item}.${6:property2} }}</dd>",
+      "</dl>",
+      "<dl>",
+      "  <dt>${7:Property 3}</dt>",
+      "  <dd>{{ ${3:item}.${8:property3} }}</dd>",
+      "</dl>"
+    ],
+    "description": "Semantic Vue definition list for key-value data"
+  },
+  "Form Basic": {
+    "prefix": "formbasic",
+    "body": [
+      "<h2>${1:Contact Form}</h2>",
+      "<form @submit.prevent=\"${2:submitForm}\">",
+      "  <p>",
+      "    <label for=\"firstname\">First Name</label>",
+      "    <input type=\"text\" id=\"firstname\" v-model=\"${3:form}.firstname\" />",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"lastname\">Last Name</label>",
+      "    <input type=\"text\" id=\"lastname\" v-model=\"${3:form}.lastname\" />",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"email\">Email</label>",
+      "    <input type=\"email\" id=\"email\" v-model=\"${3:form}.email\" />",
+      "  </p>",
+      "  <p>",
+      "    <button type=\"submit\">${4:Submit}</button>",
+      "  </p>",
+      "</form>"
+    ],
+    "description": "Basic semantic Vue form with v-model"
+  },
+  "Form Validation Inline": {
+    "prefix": "formvalidation",
+    "body": [
+      "<h2>${1:Contact Form with Validation}</h2>",
+      "<form @submit.prevent=\"${2:submitForm}\">",
+      "  <p>",
+      "    <label for=\"firstname\">First Name (required)</label>",
+      "    <input type=\"text\" id=\"firstname\" v-model=\"${3:form}.firstname\" :class=\"{ 'error': ${4:v$}.firstname.$error }\" required />",
+      "    <span v-if=\"${4:v$}.firstname.$error\" id=\"firstname_error\" aria-live=\"assertive\">${5:First name is required.}</span>",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"lastname\">Last Name (required)</label>",
+      "    <input type=\"text\" id=\"lastname\" v-model=\"${3:form}.lastname\" :class=\"{ 'error': ${4:v$}.lastname.$error }\" required />",
+      "    <span v-if=\"${4:v$}.lastname.$error\" id=\"lastname_error\" aria-live=\"assertive\">${6:Last name is required.}</span>",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"email\">Email (required)</label>",
+      "    <input type=\"email\" id=\"email\" v-model=\"${3:form}.email\" :class=\"{ 'error': ${4:v$}.email.$error }\" required />",
+      "    <span v-if=\"${4:v$}.email.$error\" id=\"email_error\" aria-live=\"assertive\">${7:Valid email is required.}</span>",
+      "  </p>",
+      "  <p>",
+      "    <button type=\"submit\" :disabled=\"${4:v$}.$invalid\">${8:Submit}</button>",
+      "  </p>",
+      "</form>"
+    ],
+    "description": "Semantic Vue form with inline validation"
+  },
+  "Form Validation Summary": {
+    "prefix": "formvalidationsummary",
+    "body": [
+      "<h2>${1:Contact Form with Validation Summary}</h2>",
+      "<section v-if=\"${2:errors}.length > 0\" role=\"alert\">",
+      "  <h3>Please correct the following errors</h3>",
+      "  <ul>",
+      "    <li v-for=\"(error, index) in ${2:errors}\" :key=\"index\">",
+      "      <a :href=\"'#' + error.field\">{{ error.message }}</a>",
+      "    </li>",
+      "  </ul>",
+      "</section>",
+      "<form @submit.prevent=\"${3:submitForm}\">",
+      "  <p>",
+      "    <label for=\"firstname\">First Name (required)</label>",
+      "    <input type=\"text\" id=\"firstname\" v-model=\"${4:form}.firstname\" required />",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"lastname\">Last Name (required)</label>",
+      "    <input type=\"text\" id=\"lastname\" v-model=\"${4:form}.lastname\" required />",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"email\">Email (required)</label>",
+      "    <input type=\"email\" id=\"email\" v-model=\"${4:form}.email\" required />",
+      "  </p>",
+      "  <p>",
+      "    <button type=\"submit\" :disabled=\"${5:isInvalid}\">${6:Submit}</button>",
+      "  </p>",
+      "</form>"
+    ],
+    "description": "Semantic Vue form with validation summary"
+  },
+  "Login Form": {
+    "prefix": "login",
+    "body": [
+      "<article>",
+      "  <header>",
+      "    <h2>Login</h2>",
+      "  </header>",
+      "  <form @submit.prevent=\"${1:login}\">",
+      "    <p>",
+      "      <label for=\"username\">Username</label>",
+      "      <input type=\"text\" id=\"username\" v-model=\"${2:credentials}.username\" autocomplete=\"username\" required />",
+      "    </p>",
+      "    <p>",
+      "      <label for=\"password\">Password</label>",
+      "      <input type=\"password\" id=\"password\" v-model=\"${2:credentials}.password\" autocomplete=\"current-password\" required />",
+      "    </p>",
+      "    <p>",
+      "      <button type=\"submit\">Sign In</button>",
+      "    </p>",
+      "  </form>",
+      "  <footer>",
+      "    <router-link to=\"${3:/register}\">${4:Create Account}</router-link> | <router-link to=\"${5:/forgot-password}\">${6:Forgot Password}</router-link>",
+      "  </footer>",
+      "</article>"
+    ],
+    "description": "Semantic Vue login form"
+  },
+  "Navigation": {
+    "prefix": "nav",
+    "body": [
+      "<nav>",
+      "  <ul>",
+      "    <li><router-link to=\"${1:/}\" exact>Home</router-link></li>",
+      "    <li><router-link to=\"${2:/about}\">About</router-link></li>",
+      "    <li><router-link to=\"${3:/products}\">Products</router-link></li>",
+      "    <li><router-link to=\"${4:/contact}\">Contact</router-link></li>",
+      "  </ul>",
+      "</nav>"
+    ],
+    "description": "Semantic Vue navigation menu with router-link"
+  },
+  "Accordion": {
+    "prefix": "accordion",
+    "body": [
+      "<div class=\"accordion\">",
+      "  <details v-for=\"(item, index) in ${1:accordionItems}\" :key=\"index\">",
+      "    <summary>{{ item.title }}</summary>",
+      "    <div class=\"accordion-content\">",
+      "      <p>{{ item.content }}</p>",
+      "    </div>",
+      "  </details>",
+      "</div>"
+    ],
+    "description": "Semantic Vue accordion using details/summary with v-for"
+  }
+}

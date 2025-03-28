@@ -1,0 +1,52 @@
+{
+  "name": "vsc-html-semantic-recipes",
+  "displayName": "HTML Semantic Recipes",
+  "description": "A Visual Studio Code extension providing semantic HTML5 markup patterns for common UI components",
+  "version": "0.1.0",
+  "publisher": "gitcoder",
+  "author": {
+    "name": "Yassine Haimouch",
+    "email": "yassinehaimouch@proton.me",
+    "url": "https://gitcoder.me"
+  },
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yassinehaimouch/vsc-html-semantic-recipes"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./snippets/html.json"
+      },
+      {
+        "language": "vue-html",
+        "path": "./snippets/vue.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/vue.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/react.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/react.json"
+      },
+      {
+        "language": "html-angular-template",
+        "path": "./snippets/angular.json"
+      }
+    ]
+  }
+}
