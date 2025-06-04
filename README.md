@@ -126,7 +126,7 @@ By focusing on semantics rather than styling, you gain:
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-[GitHub](https://github.com/yassinehaimouch/vsc-html-semantic-recipes)
+[GitHub](https://github.com/letyassine/vsc-html-semantic-recipes)
 
 ## License
 
