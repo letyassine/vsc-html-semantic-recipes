@@ -1,0 +1,239 @@
+{
+  "Breadcrumbs": {
+    "prefix": "breadcrumbs",
+    "body": [
+      "<nav>",
+      "  <p>",
+      "    <a href=\"${1:/}\">Home</a>",
+      "    <a href=\"${2:/products}\">Products</a>",
+      "    <a href=\"${3:/details}\">${4:Product Details}</a>",
+      "  </p>",
+      "</nav>"
+    ],
+    "description": "Semantic Svelte breadcrumbs navigation"
+  },
+  "Card": {
+    "prefix": "card",
+    "body": [
+      "<article>",
+      "  <header>",
+      "    <h2>${1:Card Title}</h2>",
+      "  </header>",
+      "  <p>${2:Card content goes here providing key information to the user.}</p>",
+      "  <footer>",
+      "    <a href=\"${3:#}\">${4:Action Link}</a>",
+      "  </footer>",
+      "</article>"
+    ],
+    "description": "Semantic Svelte card component"
+  },
+  "Card List": {
+    "prefix": "cardlist",
+    "body": [
+      "<ol>",
+      "  {#each ${1:items} as item (item.id)}",
+      "    <li>",
+      "      <article>",
+      "        <header>",
+      "          <h2>{item.title}</h2>",
+      "        </header>",
+      "        <p>{item.content}</p>",
+      "        <footer>",
+      "          <a href=\"{item.link}\">{item.linkText}</a>",
+      "        </footer>",
+      "      </article>",
+      "    </li>",
+      "  {/each}",
+      "</ol>"
+    ],
+    "description": "Semantic Svelte list of cards with #each"
+  },
+  "Checkbox List": {
+    "prefix": "checkboxlist",
+    "body": [
+      "<fieldset>",
+      "  <legend>${1:Options}</legend>",
+      "  <p>",
+      "    <input type=\"checkbox\" id=\"${2:option1}\" bind:group={${3:selectedOptions}} value=\"${2:option1}\" />",
+      "    <label for=\"${2:option1}\">${4:First Option}</label>",
+      "  </p>",
+      "  <p>",
+      "    <input type=\"checkbox\" id=\"${5:option2}\" bind:group={${3:selectedOptions}} value=\"${5:option2}\" />",
+      "    <label for=\"${5:option2}\">${6:Second Option}</label>",
+      "  </p>",
+      "  <p>",
+      "    <input type=\"checkbox\" id=\"${7:option3}\" bind:group={${3:selectedOptions}} value=\"${7:option3}\" />",
+      "    <label for=\"${7:option3}\">${8:Third Option}</label>",
+      "  </p>",
+      "</fieldset>"
+    ],
+    "description": "Semantic Svelte checkbox list with fieldset and bind:group"
+  },
+  "Data With Labels": {
+    "prefix": "datalist",
+    "body": [
+      "<h2>${1:Item Details}</h2>",
+      "<dl>",
+      "  <dt>${2:Property 1}</dt>",
+      "  <dd>{${3:item}.${4:property1}}</dd>",
+      "</dl>",
+      "<dl>",
+      "  <dt>${5:Property 2}</dt>",
+      "  <dd>{${3:item}.${6:property2}}</dd>",
+      "</dl>",
+      "<dl>",
+      "  <dt>${7:Property 3}</dt>",
+      "  <dd>{${3:item}.${8:property3}}</dd>",
+      "</dl>"
+    ],
+    "description": "Semantic Svelte definition list for key-value data"
+  },
+  "Form Basic": {
+    "prefix": "formbasic",
+    "body": [
+      "<h2>${1:Contact Form}</h2>",
+      "<form on:submit|preventDefault={${2:submitForm}}>",
+      "  <p>",
+      "    <label for=\"firstname\">First Name</label>",
+      "    <input type=\"text\" id=\"firstname\" bind:value={${3:form}.firstname} />",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"lastname\">Last Name</label>",
+      "    <input type=\"text\" id=\"lastname\" bind:value={${3:form}.lastname} />",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"email\">Email</label>",
+      "    <input type=\"email\" id=\"email\" bind:value={${3:form}.email} />",
+      "  </p>",
+      "  <p>",
+      "    <button type=\"submit\">${4:Submit}</button>",
+      "  </p>",
+      "</form>"
+    ],
+    "description": "Basic semantic Svelte form with bind:value"
+  },
+  "Form Validation Inline": {
+    "prefix": "formvalidation",
+    "body": [
+      "<h2>${1:Contact Form with Validation}</h2>",
+      "<form on:submit|preventDefault={${2:submitForm}}>",
+      "  <p>",
+      "    <label for=\"firstname\">First Name (required)</label>",
+      "    <input type=\"text\" id=\"firstname\" bind:value={${3:form}.firstname} required aria-describedby=\"firstname_error\" />",
+      "    {#if ${4:errors}.firstname}",
+      "      <span id=\"firstname_error\" aria-live=\"assertive\">${5:First name is required.}</span>",
+      "    {/if}",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"lastname\">Last Name (required)</label>",
+      "    <input type=\"text\" id=\"lastname\" bind:value={${3:form}.lastname} required aria-describedby=\"lastname_error\" />",
+      "    {#if ${4:errors}.lastname}",
+      "      <span id=\"lastname_error\" aria-live=\"assertive\">${6:Last name is required.}</span>",
+      "    {/if}",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"email\">Email (required)</label>",
+      "    <input type=\"email\" id=\"email\" bind:value={${3:form}.email} required aria-describedby=\"email_error\" />",
+      "    {#if ${4:errors}.email}",
+      "      <span id=\"email_error\" aria-live=\"assertive\">${7:Valid email is required.}</span>",
+      "    {/if}",
+      "  </p>",
+      "  <p>",
+      "    <button type=\"submit\" disabled={${4:hasErrors}}>${8:Submit}</button>",
+      "  </p>",
+      "</form>"
+    ],
+    "description": "Semantic Svelte form with inline validation"
+  },
+  "Form Validation Summary": {
+    "prefix": "formvalidationsummary",
+    "body": [
+      "<h2>${1:Contact Form with Validation Summary}</h2>",
+      "{#if ${2:errors}.length > 0}",
+      "  <section role=\"alert\">",
+      "    <h3>Please correct the following errors</h3>",
+      "    <ul>",
+      "      {#each ${2:errors} as error}",
+      "        <li><a href=\"#{error.field}\">{error.message}</a></li>",
+      "      {/each}",
+      "    </ul>",
+      "  </section>",
+      "{/if}",
+      "<form on:submit|preventDefault={${3:submitForm}}>",
+      "  <p>",
+      "    <label for=\"firstname\">First Name (required)</label>",
+      "    <input type=\"text\" id=\"firstname\" bind:value={${4:form}.firstname} required aria-describedby=\"firstname_error\" />",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"lastname\">Last Name (required)</label>",
+      "    <input type=\"text\" id=\"lastname\" bind:value={${4:form}.lastname} required aria-describedby=\"lastname_error\" />",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"email\">Email (required)</label>",
+      "    <input type=\"email\" id=\"email\" bind:value={${4:form}.email} required aria-describedby=\"email_error\" />",
+      "  </p>",
+      "  <p>",
+      "    <button type=\"submit\" disabled={${5:hasErrors}}>${6:Submit}</button>",
+      "  </p>",
+      "</form>"
+    ],
+    "description": "Semantic Svelte form with validation summary"
+  },
+  "Login Form": {
+    "prefix": "login",
+    "body": [
+      "<article>",
+      "  <header>",
+      "    <h2>Login</h2>",
+      "  </header>",
+      "  <form on:submit|preventDefault={${1:login}}>",
+      "    <p>",
+      "      <label for=\"username\">Username</label>",
+      "      <input type=\"text\" id=\"username\" bind:value={${2:credentials}.username} autocomplete=\"username\" required />",
+      "    </p>",
+      "    <p>",
+      "      <label for=\"password\">Password</label>",
+      "      <input type=\"password\" id=\"password\" bind:value={${2:credentials}.password} autocomplete=\"current-password\" required />",
+      "    </p>",
+      "    <p>",
+      "      <button type=\"submit\">Sign In</button>",
+      "    </p>",
+      "  </form>",
+      "  <footer>",
+      "    <a href=\"${3:/register}\">${4:Create Account}</a> | <a href=\"${5:/forgot-password}\">${6:Forgot Password}</a>",
+      "  </footer>",
+      "</article>"
+    ],
+    "description": "Semantic Svelte login form"
+  },
+  "Navigation": {
+    "prefix": "nav",
+    "body": [
+      "<nav>",
+      "  <ul>",
+      "    <li><a href=\"${1:/}\">Home</a></li>",
+      "    <li><a href=\"${2:/about}\">About</a></li>",
+      "    <li><a href=\"${3:/products}\">Products</a></li>",
+      "    <li><a href=\"${4:/contact}\">Contact</a></li>",
+      "  </ul>",
+      "</nav>"
+    ],
+    "description": "Semantic Svelte navigation menu"
+  },
+  "Accordion": {
+    "prefix": "accordion",
+    "body": [
+      "<div class=\"accordion\">",
+      "  {#each ${1:accordionItems} as item, index (item.id)}",
+      "    <details>",
+      "      <summary>{item.title}</summary>",
+      "      <div class=\"accordion-content\">",
+      "        <p>{item.content}</p>",
+      "      </div>",
+      "    </details>",
+      "  {/each}",
+      "</div>"
+    ],
+    "description": "Semantic Svelte accordion using details/summary with #each"
+  }
+} 
