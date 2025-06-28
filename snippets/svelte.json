@@ -224,7 +224,7 @@
     "prefix": "accordion",
     "body": [
       "<div class=\"accordion\">",
-      "  {#each ${1:accordionItems} as item, index}",
+      "  {#each ${1:accordionItems} as item, index (item.id)}",
       "    <details>",
       "      <summary>{item.title}</summary>",
       "      <div class=\"accordion-content\">",
