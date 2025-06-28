@@ -10,7 +10,7 @@ HTML Semantic Recipes provides carefully crafted HTML snippets that focus on pro
 
 ## Features
 
-- Framework-agnostic patterns that automatically adapt to HTML, React, Vue, and Angular
+- Framework-agnostic patterns that automatically adapt to HTML, React, Vue, Angular, and Svelte
 - Semantic HTML5 elements used appropriately
 - ARIA attributes included where necessary
 - Clean, maintainable code patterns
@@ -64,6 +64,18 @@ The extension automatically provides the appropriate syntax based on the file ty
 - Vue directives
 - Vue router integration
 
+### Svelte (.svelte)
+
+- Svelte-specific syntax for reactivity and binding (e.g., `bind:value`, `bind:group`)
+- Uses Svelte's `{#each}` and `{#if}` blocks for lists and conditionals
+- Standard HTML attributes and events
+
+### Astro (.astro)
+
+- Astro-specific snippets for UI components
+- Standard HTML5 markup with support for Astro templating (e.g., `{items.map(...)}`)
+- Ready for use in Astro component files
+
 ## Usage
 
 1. Open a file with the appropriate language mode (HTML, JSX, TSX, Vue, Angular)
@@ -110,6 +122,34 @@ The extension automatically provides the appropriate syntax based on the file ty
     <li><router-link to="/contact">Contact</router-link></li>
   </ul>
 </nav>
+```
+
+### Card (Svelte)
+
+```svelte
+<article>
+  <header>
+    <h2>Card Title</h2>
+  </header>
+  <p>Card content goes here providing key information to the user.</p>
+  <footer>
+    <a href="#">Action Link</a>
+  </footer>
+</article>
+```
+
+### Card (Astro)
+
+```astro
+<article>
+  <header>
+    <h2>Card Title</h2>
+  </header>
+  <p>Card content goes here providing key information to the user.</p>
+  <footer>
+    <a href="#">Action Link</a>
+  </footer>
+</article>
 ```
 
 ## Benefits of Semantic HTML

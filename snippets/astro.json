@@ -1,0 +1,235 @@
+{
+  "Breadcrumbs": {
+    "prefix": "breadcrumbs",
+    "body": [
+      "<nav>",
+      "  <p>",
+      "    <a href=\"${1:/}\">Home</a>",
+      "    <a href=\"${2:/products}\">Products</a>",
+      "    <a href=\"${3:/details}\">${4:Product Details}</a>",
+      "  </p>",
+      "</nav>"
+    ],
+    "description": "Semantic Astro breadcrumbs navigation"
+  },
+  "Card": {
+    "prefix": "card",
+    "body": [
+      "<article>",
+      "  <header>",
+      "    <h2>${1:Card Title}</h2>",
+      "  </header>",
+      "  <p>${2:Card content goes here providing key information to the user.}</p>",
+      "  <footer>",
+      "    <a href=\"${3:#}\">${4:Action Link}</a>",
+      "  </footer>",
+      "</article>"
+    ],
+    "description": "Semantic Astro card component"
+  },
+  "Card List": {
+    "prefix": "cardlist",
+    "body": [
+      "<ol>",
+      "  <!-- Use Astro's {items.map()} in a code fence if needed -->",
+      "  {items.map(item => (",
+      "    <li key={item.id}>",
+      "      <article>",
+      "        <header>",
+      "          <h2>{item.title}</h2>",
+      "        </header>",
+      "        <p>{item.content}</p>",
+      "        <footer>",
+      "          <a href={item.link}>{item.linkText}</a>",
+      "        </footer>",
+      "      </article>",
+      "    </li>",
+      "  ))}",
+      "</ol>"
+    ],
+    "description": "Semantic Astro list of cards using map()"
+  },
+  "Checkbox List": {
+    "prefix": "checkboxlist",
+    "body": [
+      "<fieldset>",
+      "  <legend>${1:Options}</legend>",
+      "  <p>",
+      "    <input type=\"checkbox\" id=\"${2:option1}\" name=\"${3:group}\" value=\"${2:option1}\" />",
+      "    <label for=\"${2:option1}\">${4:First Option}</label>",
+      "  </p>",
+      "  <p>",
+      "    <input type=\"checkbox\" id=\"${5:option2}\" name=\"${3:group}\" value=\"${5:option2}\" />",
+      "    <label for=\"${5:option2}\">${6:Second Option}</label>",
+      "  </p>",
+      "  <p>",
+      "    <input type=\"checkbox\" id=\"${7:option3}\" name=\"${3:group}\" value=\"${7:option3}\" />",
+      "    <label for=\"${7:option3}\">${8:Third Option}</label>",
+      "  </p>",
+      "</fieldset>"
+    ],
+    "description": "Semantic Astro checkbox list with fieldset"
+  },
+  "Data With Labels": {
+    "prefix": "datalist",
+    "body": [
+      "<h2>${1:Item Details}</h2>",
+      "<dl>",
+      "  <dt>${2:Property 1}</dt>",
+      "  <dd>{${3:item}.${4:property1}}</dd>",
+      "</dl>",
+      "<dl>",
+      "  <dt>${5:Property 2}</dt>",
+      "  <dd>{${3:item}.${6:property2}}</dd>",
+      "</dl>",
+      "<dl>",
+      "  <dt>${7:Property 3}</dt>",
+      "  <dd>{${3:item}.${8:property3}}</dd>",
+      "</dl>"
+    ],
+    "description": "Semantic Astro definition list for key-value data"
+  },
+  "Form Basic": {
+    "prefix": "formbasic",
+    "body": [
+      "<h2>${1:Contact Form}</h2>",
+      "<form> <!-- Add handlers in a code fence if needed -->",
+      "  <p>",
+      "    <label for=\"firstname\">First Name</label>",
+      "    <input type=\"text\" id=\"firstname\" name=\"firstname\" />",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"lastname\">Last Name</label>",
+      "    <input type=\"text\" id=\"lastname\" name=\"lastname\" />",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"email\">Email</label>",
+      "    <input type=\"email\" id=\"email\" name=\"email\" />",
+      "  </p>",
+      "  <p>",
+      "    <button type=\"submit\">${2:Submit}</button>",
+      "  </p>",
+      "</form>"
+    ],
+    "description": "Basic semantic Astro form"
+  },
+  "Form Validation Inline": {
+    "prefix": "formvalidation",
+    "body": [
+      "<h2>${1:Contact Form with Validation}</h2>",
+      "<form> <!-- Add validation logic in a code fence if needed -->",
+      "  <p>",
+      "    <label for=\"firstname\">First Name (required)</label>",
+      "    <input type=\"text\" id=\"firstname\" name=\"firstname\" required aria-describedby=\"firstname_error\" />",
+      "    <!-- Show error message as needed -->",
+      "    <span id=\"firstname_error\" aria-live=\"assertive\">${2:First name is required.}</span>",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"lastname\">Last Name (required)</label>",
+      "    <input type=\"text\" id=\"lastname\" name=\"lastname\" required aria-describedby=\"lastname_error\" />",
+      "    <span id=\"lastname_error\" aria-live=\"assertive\">${3:Last name is required.}</span>",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"email\">Email (required)</label>",
+      "    <input type=\"email\" id=\"email\" name=\"email\" required aria-describedby=\"email_error\" />",
+      "    <span id=\"email_error\" aria-live=\"assertive\">${4:Valid email is required.}</span>",
+      "  </p>",
+      "  <p>",
+      "    <button type=\"submit\">${5:Submit}</button>",
+      "  </p>",
+      "</form>"
+    ],
+    "description": "Semantic Astro form with inline validation"
+  },
+  "Form Validation Summary": {
+    "prefix": "formvalidationsummary",
+    "body": [
+      "<h2>${1:Contact Form with Validation Summary}</h2>",
+      "<!-- Add error summary logic in a code fence if needed -->",
+      "<section role=\"alert\">",
+      "  <h3>Please correct the following errors</h3>",
+      "  <ul>",
+      "    <li><a href=\"#firstname\">${2:First name is required.}</a></li>",
+      "    <li><a href=\"#lastname\">${3:Last name is required.}</a></li>",
+      "    <li><a href=\"#email\" id=\"email_error\">${4:Valid email is required.}</a></li>",
+      "  </ul>",
+      "</section>",
+      "<form> <!-- Add handlers in a code fence if needed -->",
+      "  <p>",
+      "    <label for=\"firstname\">First Name (required)</label>",
+      "    <input type=\"text\" id=\"firstname\" name=\"firstname\" required aria-describedby=\"firstname_error\" />",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"lastname\">Last Name (required)</label>",
+      "    <input type=\"text\" id=\"lastname\" name=\"lastname\" required aria-describedby=\"lastname_error\" />",
+      "  </p>",
+      "  <p>",
+      "    <label for=\"email\">Email (required)</label>",
+      "    <input type=\"email\" id=\"email\" name=\"email\" required aria-describedby=\"email_error\" />",
+      "  </p>",
+      "  <p>",
+      "    <button type=\"submit\">${5:Submit}</button>",
+      "  </p>",
+      "</form>"
+    ],
+    "description": "Semantic Astro form with validation summary"
+  },
+  "Login Form": {
+    "prefix": "login",
+    "body": [
+      "<article>",
+      "  <header>",
+      "    <h2>Login</h2>",
+      "  </header>",
+      "  <form>",
+      "    <p>",
+      "      <label for=\"username\">Username</label>",
+      "      <input type=\"text\" id=\"username\" name=\"username\" autocomplete=\"username\" required />",
+      "    </p>",
+      "    <p>",
+      "      <label for=\"password\">Password</label>",
+      "      <input type=\"password\" id=\"password\" name=\"password\" autocomplete=\"current-password\" required />",
+      "    </p>",
+      "    <p>",
+      "      <button type=\"submit\">Sign In</button>",
+      "    </p>",
+      "  </form>",
+      "  <footer>",
+      "    <a href=\"${2:/register}\">${3:Create Account}</a> | <a href=\"${4:/forgot-password}\">${5:Forgot Password}</a>",
+      "  </footer>",
+      "</article>"
+    ],
+    "description": "Semantic Astro login form"
+  },
+  "Navigation": {
+    "prefix": "nav",
+    "body": [
+      "<nav>",
+      "  <ul>",
+      "    <li><a href=\"${1:/}\">Home</a></li>",
+      "    <li><a href=\"${2:/about}\">About</a></li>",
+      "    <li><a href=\"${3:/products}\">Products</a></li>",
+      "    <li><a href=\"${4:/contact}\">Contact</a></li>",
+      "  </ul>",
+      "</nav>"
+    ],
+    "description": "Semantic Astro navigation menu"
+  },
+  "Accordion": {
+    "prefix": "accordion",
+    "body": [
+      "<div class=\"accordion\">",
+      "  <!-- Use Astro's {items.map()} in a code fence if needed -->",
+      "  {items.map(item => (",
+      "    <details key={item.id}>",
+      "      <summary>{item.title}</summary>",
+      "      <div class=\"accordion-content\">",
+      "        <p>{item.content}</p>",
+      "      </div>",
+      "    </details>",
+      "  ))}",
+      "</div>"
+    ],
+    "description": "Semantic Astro accordion using details/summary and map()"
+  }
+} 

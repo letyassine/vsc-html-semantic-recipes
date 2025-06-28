@@ -46,6 +46,14 @@
       {
         "language": "html-angular-template",
         "path": "./snippets/angular.json"
+      },
+      {
+        "language": "svelte",
+        "path": "./snippets/svelte.json"
+      },
+      {
+        "language": "astro",
+        "path": "./snippets/svelte.json"
       }
     ]
   }
