@@ -221,7 +221,7 @@
       "<div class=\"accordion\">",
       "  <!-- Use Astro's {items.map()} in a code fence if needed -->",
       "  {items.map(item => (",
-      "    <details key={item.id}>",
+      "    <details>",
       "      <summary>{item.title}</summary>",
       "      <div class=\"accordion-content\">",
       "        <p>{item.content}</p>",
