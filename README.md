@@ -168,6 +168,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 [GitHub](https://github.com/letyassine/vsc-html-semantic-recipes)
 
+## Sponsoring
+
+<iframe src="https://github.com/sponsors/letyassine/button" title="Sponsor letyassine" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
+
 ## License
 
 MIT
